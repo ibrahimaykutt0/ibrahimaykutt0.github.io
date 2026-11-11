@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-slRE7mHGbs7Cc9W9wOzmlLwTkZLnnKd269pXhdYQZR4=' 'sha256-AoGPC/pVmqjChN74UWVlVNzZBzgSR/xEdIhiMJxHDRg='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>İbrahim Aykut · Yazılım Mühendisliği Öğrencisi</title>
 <meta name="description" content="İbrahim Aykut: KOSTÜ'de yazılım mühendisliği öğrencisi ve stajyer. Mobil uygulama ve web tarafında geliştirme yapıyor. Kocaeli.">
 <meta property="og:title" content="İbrahim Aykut · Yazılım Mühendisliği Öğrencisi">
@@ -14,11 +16,16 @@
 <link rel="canonical" href="https://ibrahimaykutt0.github.io/">
 <meta name="theme-color" content="#f7f9fa">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230d7480'/%3E%3Cstop offset='1' stop-color='%230a5c66'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' text-anchor='middle' fill='white'%3E%C4%B0A%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>try { if (localStorage.getItem('lang') === 'en') document.documentElement.lang = 'en'; } catch (e) {}</script>
 <style>
+/* Familjen Grotesk (SIL Open Font License), sitenin kendi dosyalarından */
+@font-face { font-family: "Familjen Grotesk"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("assets/fonts/familjen-grotesk-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Familjen Grotesk"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("assets/fonts/familjen-grotesk-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 /* Palet: "Frost and slate" (design-taste-frontend start.mjs deal, software). Düz zeminler, ışık/gradyan yok. */
 :root {
   --bg: #f7f9fa;          /* ana zemin */
