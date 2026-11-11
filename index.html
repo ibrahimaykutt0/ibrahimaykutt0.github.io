@@ -1,0 +1,879 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İbrahim Aykut · Yazılım Mühendisliği Öğrencisi</title>
+<meta name="description" content="İbrahim Aykut: KOSTÜ'de yazılım mühendisliği öğrencisi ve stajyer. Mobil uygulama ve web tarafında geliştirme yapıyor. Kocaeli.">
+<meta property="og:title" content="İbrahim Aykut · Yazılım Mühendisliği Öğrencisi">
+<meta property="og:description" content="Mobil uygulama ve web. KOSTÜ, Kocaeli.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ibrahimaykutt0.github.io/assets/profil-og.jpg">
+<meta property="og:url" content="https://ibrahimaykutt0.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://ibrahimaykutt0.github.io/">
+<meta name="theme-color" content="#f7f9fa">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230d7480'/%3E%3Cstop offset='1' stop-color='%230a5c66'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' text-anchor='middle' fill='white'%3E%C4%B0A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>try { if (localStorage.getItem('lang') === 'en') document.documentElement.lang = 'en'; } catch (e) {}</script>
+<style>
+/* Palet: "Frost and slate" (design-taste-frontend start.mjs deal, software). Düz zeminler, ışık/gradyan yok. */
+:root {
+  --bg: #f7f9fa;          /* ana zemin */
+  --bg-2: #ecf0f2;        /* tek bant */
+  --card: #ffffff;
+  --line: #dce4e7;
+  --line-2: #c9d5d9;
+  --text: #1f3038;        /* mürekkep */
+  --muted: #3a4c55;
+  --dim: #5e6f77;
+  --accent: #0d7480;      /* petrol yeşili */
+  --accent-dk: #0a5c66;
+  --accent-bg: #e4f0f1;
+  --accent-line: #c3dfe2;
+  --green: #15803d;
+  --dark: #0f2228;        /* alt bilgi: markanın en koyu tonu */
+  --wrap: 1200px;
+  --r: 14px;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; scrollbar-color: #b9c6ca var(--bg); }
+body {
+  margin: 0; color: var(--text); background: var(--bg);
+  font-family: "Familjen Grotesk", system-ui, sans-serif; font-size: 16.5px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+::selection { background: rgba(13, 116, 128, .18); color: var(--text); }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { margin: 0; letter-spacing: -.02em; line-height: 1.12; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+.wrap { width: min(var(--wrap), 100% - 48px); margin-inline: auto; }
+.skip { position: absolute; left: 16px; top: -80px; z-index: 200; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 10px; font-weight: 600; }
+.skip:focus { top: 12px; }
+
+/* ===== Üst menü ===== */
+.nav { position: fixed; inset: 0 0 auto; z-index: 100; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.nav.scrolled { background: rgba(247, 249, 250, .94); border-color: var(--line); }
+.nav .wrap { height: 76px; display: flex; align-items: center; gap: 28px; }
+.logo { font-weight: 700; font-size: 22px; letter-spacing: -.03em; color: var(--text); }
+.logo::after { content: "."; color: var(--accent); }
+.links { display: flex; gap: 2px; list-style: none; margin: 0 auto; padding: 0; }
+.links a { display: block; padding: 8px 12px; border-radius: 8px; font-size: 15px; font-weight: 500; color: var(--muted); transition: color .2s, background .2s; position: relative; }
+.links a::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.links a:hover { color: var(--text); }
+.links a:hover::after, .links a.active::after { transform: scaleX(1); }
+.links a.active { color: var(--text); }
+.tools { display: flex; align-items: center; gap: 12px; }
+.lang { display: flex; padding: 3px; border-radius: 999px; border: 1px solid var(--line-2); background: #fff; }
+.lang button { border: 0; background: none; cursor: pointer; padding: 6px 13px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--dim); transition: color .2s, background .2s; }
+.lang button[aria-pressed="true"] { background: var(--text); color: #fff; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 50px; padding: 0 26px; border-radius: 999px;
+  font-weight: 600; font-size: 15.5px; cursor: pointer; border: 1px solid transparent; white-space: nowrap;
+  transition: transform .25s var(--ease), background .2s, border-color .2s, color .2s;
+}
+.btn svg { width: 17px; height: 17px; }
+.btn-grad { background: var(--accent); color: #fff; }
+.btn-grad:hover { background: var(--accent-dk); transform: translateY(-2px); }
+.btn-line { border-color: var(--line-2); color: var(--text); background: #fff; }
+.btn-line:hover { border-color: var(--text); transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn-sm { height: 42px; padding: 0 20px; font-size: 14.5px; }
+.menu-btn { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line-2); background: #fff; cursor: pointer; place-items: center; }
+.menu-btn svg { width: 20px; height: 20px; }
+
+/* ===== Açılış ===== */
+.hero { min-height: 100svh; display: flex; align-items: center; padding: 120px 0 90px; position: relative; overflow-x: clip; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: start; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+.hero h1 { margin-top: 16px; font-size: clamp(48px, 7vw, 86px); font-weight: 600; letter-spacing: -.04em; line-height: 1; }
+.roles { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 26px; }
+.role { padding: 7px 15px; border-radius: 999px; font-size: 14.5px; font-weight: 500; border: 1px solid var(--line-2); background: #fff; color: var(--text); }
+.roles .sep { color: var(--dim); }
+.facts { margin-top: 14px; font-size: 15px; font-weight: 500; color: var(--text); }
+.tagline { margin-top: 22px; max-width: 46ch; color: var(--muted); font-size: 18px; }
+.socials { display: flex; gap: 10px; margin-top: 28px; list-style: none; padding: 0; }
+.social {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--text);
+  border: 1px solid var(--line-2); background: #fff; transition: color .2s, border-color .2s, transform .25s var(--ease), background .2s;
+}
+.social svg { width: 17px; height: 17px; }
+.social:hover { color: #fff; border-color: var(--accent); background: var(--accent); transform: translateY(-3px); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+.photo-wrap { position: relative; justify-self: center; width: min(400px, 82vw); aspect-ratio: 4 / 5; }
+.oval { position: relative; width: 100%; height: 100%; border-radius: 50%; padding: 8px; background: #fff; border: 1px solid var(--line-2); }
+.oval-in { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; }
+.oval img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 14%; background: var(--bg-2); }
+.scroll-cue { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: 24px; height: 40px; border-radius: 14px; border: 2px solid #b9c6ca; }
+.scroll-cue::after { content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--accent); animation: wheel 2s ease-in-out infinite; }
+@keyframes wheel { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(14px); } }
+
+/* ===== Bölüm düzeni ===== */
+.section { padding: 112px 0; position: relative; }
+.section.alt { background: var(--bg-2); }
+.head { text-align: center; margin-bottom: 56px; }
+.head h2 { margin-top: 12px; font-size: clamp(34px, 4.4vw, 50px); font-weight: 600; letter-spacing: -.035em; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; transition: border-color .25s, transform .3s var(--ease); }
+.card:hover { border-color: var(--line-2); }
+.card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.ic-box { width: 42px; height: 42px; flex: none; border-radius: 11px; display: grid; place-items: center; background: var(--accent-bg); color: var(--accent); }
+.ic-box svg { width: 20px; height: 20px; }
+.card-head h3 { font-size: 18.5px; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 13px; border-radius: 999px; font-size: 14px; font-weight: 500; border: 1px solid var(--line); background: var(--bg); color: var(--text); transition: border-color .2s, transform .2s var(--ease); }
+.chip:hover { border-color: var(--line-2); transform: translateY(-1px); }
+.chip svg { width: 14px; height: 14px; color: var(--accent); }
+.chip.cy { background: var(--accent-bg); border-color: var(--accent-line); color: var(--accent-dk); }
+.chip.gr { background: #e8f5ec; border-color: #c4e3cf; color: var(--green); }
+.chip .ok { color: var(--green); }
+
+/* ===== Hakkımda ===== */
+.about { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: start; }
+.about-text p { color: var(--muted); font-size: 18px; line-height: 1.75; }
+.about-text p + p { margin-top: 18px; }
+.about-text strong { color: var(--text); font-weight: 600; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat { text-align: left; padding: 26px 24px; }
+.stat b { display: block; font-size: 38px; font-weight: 600; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
+.stat span { display: block; margin-top: 10px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
+
+/* ===== Yetenekler ===== */
+.skills { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+.skills .col { display: grid; gap: 20px; align-content: start; }
+.skills .wide { grid-column: 1 / -1; }
+.bar + .bar { margin-top: 20px; }
+.bar-top { display: flex; justify-content: space-between; font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 9px; }
+.bar-top span:last-child { color: var(--dim); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.track { height: 6px; border-radius: 99px; background: #e3eaec; overflow: hidden; }
+.track i { display: block; height: 100%; border-radius: 99px; background: var(--accent); }
+.langs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.langs li { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); }
+.langs .code { font-weight: 700; font-size: 15px; color: var(--accent); width: 26px; }
+.langs b { display: block; font-size: 15.5px; font-weight: 600; }
+.langs small { color: var(--muted); font-size: 13.5px; }
+.langs .badge { margin-left: auto; }
+
+/* ===== Projeler ===== */
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.project { display: flex; flex-direction: column; }
+.project:hover { transform: translateY(-4px); border-color: var(--line-2); }
+.project .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 18px; }
+.project .meta { margin-bottom: 8px; font-size: 13.5px; font-weight: 600; color: var(--accent); }
+.project h3 { font-size: 20px; font-weight: 600; line-height: 1.3; }
+.project p { margin-top: 12px; color: var(--muted); font-size: 15.5px; line-height: 1.7; }
+.project ul.points { margin: 14px 0 0; padding: 0; list-style: none; }
+.project ul.points li { position: relative; padding-left: 16px; color: var(--muted); font-size: 15.5px; line-height: 1.65; }
+.project ul.points li + li { margin-top: 6px; }
+.project ul.points li::before { content: ""; position: absolute; left: 1px; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.project .chips { margin-top: auto; padding-top: 22px; }
+.project .chip { font-size: 13px; padding: 5px 11px; }
+.more-wrap { display: flex; justify-content: center; margin-top: 36px; }
+.badge { padding: 4px 11px; border-radius: 999px; font-size: 12.5px; font-weight: 600; border: 1px solid; white-space: nowrap; }
+.badge.live { color: var(--green); border-color: #c4e3cf; background: #e8f5ec; }
+.badge.job { color: #1e4e79; border-color: #c9d9ea; background: #edf3f9; }
+.badge.intern { color: var(--accent-dk); border-color: var(--accent-line); background: var(--accent-bg); }
+.badge.vol { color: #166534; border-color: #c4e3cf; background: #ecf7f0; }
+.badge.lead { color: #92400e; border-color: #f0d9b5; background: #fbf3e6; }
+.badge.edu { color: var(--accent-dk); border-color: var(--accent-line); background: var(--accent-bg); }
+
+/* ===== Deneyim ===== */
+.timeline { position: relative; max-width: 780px; margin: 0 auto; list-style: none; padding: 0 0 0 44px; }
+.timeline::before { content: ""; position: absolute; left: 10px; top: 14px; bottom: 14px; width: 2px; background: var(--line-2); }
+.tl { position: relative; }
+.tl + .tl { margin-top: 24px; }
+.tl::before { content: ""; position: absolute; left: -40px; top: 30px; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+.tl.now::before { background: var(--accent); }
+.tl .card:hover { border-color: var(--line-2); }
+.tl-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--accent); }
+.tl-meta .len { color: var(--dim); font-weight: 500; }
+.tl h3 { margin-top: 12px; font-size: 20.5px; font-weight: 600; }
+.tl .org { margin-top: 4px; color: var(--muted); font-weight: 500; }
+.tl ul { margin: 14px 0 0; padding: 0; list-style: none; }
+.tl li { position: relative; padding-left: 16px; color: var(--muted); font-size: 15.5px; }
+.tl li + li { margin-top: 6px; }
+.tl li::before { content: ""; position: absolute; left: 1px; top: 11px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+/* ===== Eğitim ===== */
+.edu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.edu .card { position: relative; overflow: hidden; padding-left: 30px; }
+.edu .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); }
+.edu .row { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; }
+.edu h3 { font-size: 18.5px; font-weight: 600; }
+.edu .school { margin-top: 4px; color: var(--muted); font-weight: 500; font-size: 15.5px; }
+.edu .year { width: 100%; margin-top: 2px; }
+.edu .year b { display: block; font-size: 28px; font-weight: 600; letter-spacing: -.03em; color: var(--accent); }
+.edu .year small { color: var(--dim); font-size: 12.5px; }
+.edu .chips { margin-top: 20px; }
+.edu .chip { font-size: 13.5px; padding: 5px 12px; }
+
+/* ===== Sertifikalar ===== */
+.certs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cert { display: flex; gap: 18px; align-items: flex-start; }
+.cert .ic-box { border-radius: 50%; }
+.cert .who { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cert h3 { margin-top: 6px; font-size: 17.5px; font-weight: 600; }
+.cert .badge { display: inline-block; margin-top: 12px; }
+
+/* ===== İletişim ===== */
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+.contact-intro { color: var(--muted); font-size: 18px; line-height: 1.7; max-width: 42ch; }
+.info { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 18px; }
+.info li { display: flex; align-items: center; gap: 16px; }
+.info .ic-box { border-radius: 50%; }
+.info small { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.info a, .info span { font-weight: 600; }
+.info a:hover { color: var(--accent); }
+.avail { color: var(--green); display: inline-flex; align-items: center; gap: 8px; }
+.avail::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.contact .socials { margin-top: 28px; }
+form.card { padding: 32px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.field + .field, .frow + .field { margin-top: 18px; }
+.frow > .field + .field { margin-top: 0; }
+label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 600; color: var(--text); }
+input, textarea {
+  width: 100%; font: inherit; font-size: 16px; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 10px; padding: 12px 14px;
+  transition: border-color .2s, box-shadow .2s; caret-color: var(--accent);
+}
+input::placeholder, textarea::placeholder { color: #6d7d84; }
+textarea { min-height: 140px; resize: vertical; }
+input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(13, 116, 128, .15); }
+.err { display: none; margin-top: 6px; font-size: 13.5px; color: #b42318; }
+.field.invalid input, .field.invalid textarea { border-color: #b42318; }
+.field.invalid .err { display: block; }
+form .btn { width: 100%; margin-top: 22px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { margin-top: 14px; font-size: 15px; font-weight: 500; text-align: center; min-height: 1.5em; }
+.form-status.ok { color: var(--green); }
+.form-status.bad { color: #b42318; }
+form .btn[disabled] { opacity: .7; cursor: progress; }
+
+footer { padding: 30px 0; background: var(--dark); color: #c7d4d8; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 14.5px; }
+footer .socials { margin: 0; gap: 4px; }
+footer .social { border: 0; background: none; width: 40px; height: 40px; color: #c7d4d8; }
+footer .social:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+
+/* ===== Mobil menü ===== */
+.mmenu { position: fixed; inset: 0; z-index: 150; background: var(--bg); padding: 96px 28px 32px; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+.mmenu.open { opacity: 1; visibility: visible; }
+.mmenu a:not(.btn) { font-size: 28px; font-weight: 600; letter-spacing: -.02em; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.mmenu .btn { margin-top: 28px; }
+.mmenu .close { position: absolute; top: 16px; right: 24px; }
+
+/* ===== Görünürken beliren öğeler ===== */
+.hero .enter { opacity: 0; transform: translateY(20px); animation: enter .9s var(--ease) forwards; }
+@keyframes enter { to { opacity: 1; transform: none; } }
+
+/* ===== Uyum ===== */
+@media (max-width: 1080px) {
+  .projects { grid-template-columns: repeat(2, 1fr); }
+  .links, .tools .cv { display: none; }
+  .menu-btn { display: grid; }
+  .tools { margin-left: auto; }
+}
+@media (max-width: 900px) {
+  .hero { padding-top: 110px; }
+  .certs { grid-template-columns: 1fr; }
+  .hero-grid, .about, .contact, .skills, .edu { grid-template-columns: 1fr; }
+  .hero-grid { gap: 56px; }
+  .photo-wrap { order: -1; width: min(300px, 70vw); }
+}
+@media (max-width: 620px) {
+  .wrap { width: calc(100% - 32px); }
+  body { font-size: 16px; }
+  .nav .wrap { height: 64px; gap: 12px; }
+  .lang button { padding: 8px 12px; min-height: 34px; }
+  .hero { padding: 92px 0 56px; min-height: auto; }
+  .hero h1 { font-size: clamp(42px, 12.5vw, 54px); }
+  .hero-grid { gap: 28px; }
+  .photo-wrap { width: min(190px, 52vw); }
+  .oval { padding: 5px; }
+  .role { font-size: 14px; padding: 6px 13px; }
+  .tagline { font-size: 16.5px; }
+  .socials { flex-wrap: wrap; }
+  .head h2 { font-size: clamp(30px, 9vw, 38px); }
+  .about-text p { font-size: 16.5px; }
+  .stat { padding: 22px 18px; }
+  .stat b { font-size: 32px; }
+  .chip { font-size: 13.5px; padding: 6px 12px; }
+  .langs li { padding: 12px 14px; flex-wrap: wrap; }
+  .tl h3 { font-size: 18.5px; }
+  .tl li, .project p, .project ul.points li { font-size: 15px; }
+  .project h3 { font-size: 18.5px; }
+  .more-wrap .btn { width: 100%; }
+  .contact-intro { font-size: 16.5px; }
+  .info a, .info span { overflow-wrap: anywhere; }
+  footer .wrap { flex-direction: column; align-items: flex-start; }
+  .section { padding: 80px 0; }
+  .head { margin-bottom: 40px; }
+  .projects { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .card, form.card { padding: 22px; }
+  .frow { grid-template-columns: 1fr; }
+  .frow .field + .field { margin-top: 18px; }
+  .timeline { padding-left: 30px; }
+  .timeline::before { left: 6px; }
+  .tl::before { left: -30px; }
+  .roles .sep { display: none; }
+  .edu .row { flex-wrap: wrap; }
+  .edu .year { padding-left: 0; }
+  .scroll-cue { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .hero .enter { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">İçeriğe geç</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="İbrahim Aykut, başa dön">İA</a>
+    <ul class="links">
+      <li><a href="#hakkimda" data-i18n="nav.about">Hakkımda</a></li>
+      <li><a href="#yetenekler" data-i18n="nav.skills">Yetenekler</a></li>
+      <li><a href="#projeler" data-i18n="nav.projects">Projeler</a></li>
+      <li><a href="#deneyim" data-i18n="nav.exp">Deneyim</a></li>
+      <li><a href="#egitim" data-i18n="nav.edu">Eğitim</a></li>
+      <li><a href="#sertifikalar" data-i18n="nav.certs">Sertifikalar</a></li>
+      <li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-grad btn-sm cv" href="assets/ibrahim-aykut-cv.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        <span data-i18n="cv">CV'yi İndir</span></a>
+      <button class="menu-btn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mmenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mmenu" id="mmenu" aria-label="Menü">
+  <button class="menu-btn close" type="button" aria-label="Menüyü kapat" style="display:grid">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <a href="#hakkimda" data-i18n="nav.about">Hakkımda</a>
+  <a href="#yetenekler" data-i18n="nav.skills">Yetenekler</a>
+  <a href="#projeler" data-i18n="nav.projects">Projeler</a>
+  <a href="#deneyim" data-i18n="nav.exp">Deneyim</a>
+  <a href="#egitim" data-i18n="nav.edu">Eğitim</a>
+  <a href="#sertifikalar" data-i18n="nav.certs">Sertifikalar</a>
+  <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
+  <a class="btn btn-grad" href="assets/ibrahim-aykut-cv.pdf" download data-i18n="cv">CV'yi İndir</a>
+</nav>
+
+<main id="main">
+  <!-- ===== AÇILIŞ ===== -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow enter" data-i18n="hero.hello">Merhaba, ben</p>
+        <h1 class="enter" style="animation-delay:.08s">İbrahim Aykut</h1>
+        <div class="roles enter" style="animation-delay:.16s">
+          <span class="role" data-i18n="hero.role1">Yazılım Mühendisliği Öğrencisi</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span class="role" data-i18n="hero.role2">Web & Backend Geliştirici</span>
+        </div>
+        <p class="tagline enter" style="animation-delay:.24s" data-i18n="hero.tagline">HTML, CSS, JavaScript, C#, Python ve SQL Server ile web, masaüstü ve mobil uygulamalar geliştiriyorum.</p>
+        <p class="facts enter" style="animation-delay:.28s" data-i18n="hero.facts">Kocaeli · KOSTÜ Yazılım Mühendisliği · 2028 mezuniyet</p>
+        <ul class="socials enter" style="animation-delay:.32s" data-socials></ul>
+        <div class="hero-actions enter" style="animation-delay:.4s">
+          <a class="btn btn-grad" href="#projeler" data-i18n="hero.cta1">Projelerimi Gör</a>
+          <a class="btn btn-line" href="#iletisim" data-i18n="hero.cta2">İletişime Geç</a>
+        </div>
+      </div>
+
+      <div class="photo-wrap enter" style="animation-delay:.2s">
+        <div class="oval"><div class="oval-in"><img src="assets/profil-hero.jpg" alt="İbrahim Aykut" width="800" height="1000"></div></div>
+      </div>
+    </div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </section>
+
+  <!-- ===== HAKKIMDA ===== -->
+  <section class="section" id="hakkimda">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="about.eyebrow">Ben kimim?</p><h2 data-i18n="about.title">Hakkımda</h2></div>
+      <div class="about">
+        <div class="about-text reveal">
+          <p data-i18n="about.p1" data-html>Kocaeli Sağlık ve Teknoloji Üniversitesi’nde (KOSTÜ) <strong>Yazılım Mühendisliği</strong> okuyorum; Kocaeli Üniversitesi <strong>Bilgisayar Programcılığı</strong> bölümünden mezunum.</p>
+          <p data-i18n="about.p2" data-html><strong>Seyir Mobil</strong> ve <strong>Medya Baba</strong>’nın Ar-Ge ekiplerinde web ve yazılım geliştirme stajları yaptım. HTML, CSS, JavaScript, C#, Python, Node.js ve SQL Server ile full-stack web ve masaüstü uygulamalar geliştirdim; işletmeler için stok ve satış takip uygulamasını baştan sona yazdım.</p>
+          <p data-i18n="about.p3" data-html>Anti-dron sistemi <strong>TABYA-1</strong> projesinde lider yardımcılığı yaptım, Erasmus+ projesinde Türkiye takım lideriydim. Şu an KOSTÜ’de üniversitenin mobil kampüs uygulaması <strong>KOSTÜ Mobil</strong>’i geliştiriyorum. Savunma sanayii teknolojilerine ilgi duyuyorum; yazılım ve web alanında katma değer üreten bir ekipte yer almak istiyorum.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="card stat"><b data-count="4">0</b><span data-i18n="stat.orgs">Kurum</span></div>
+          <div class="card stat"><b data-count="4">0</b><span data-i18n="stat.roles">Proje</span></div>
+          <div class="card stat"><b data-count="4">0</b><span data-i18n="stat.skills">Sertifika</span></div>
+          <div class="card stat"><b data-count="2028">0</b><span data-i18n="stat.grad">Mezuniyet Hedefi</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YETENEKLER ===== -->
+  <section class="section alt" id="yetenekler">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="skills.eyebrow">Ne yapıyorum?</p><h2 data-i18n="skills.title">Yetenekler</h2></div>
+      <div class="skills">
+        <div class="card reveal">
+          <div class="card-head"><span class="ic-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span><h3 data-i18n="skills.dev">Yazılım Geliştirme</h3></div>
+          <div id="bars"></div>
+        </div>
+        <div class="col">
+          <div class="card reveal">
+            <div class="card-head"><span class="ic-box v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span><h3 data-i18n="skills.focus">Teknolojiler</h3></div>
+            <ul class="chips" id="chips-tech"></ul>
+          </div>
+          <div class="card reveal">
+            <div class="card-head"><span class="ic-box c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><h3 data-i18n="skills.web">Diller</h3></div>
+            <ul class="langs" id="langs"></ul>
+          </div>
+        </div>
+        <div class="card wide reveal">
+          <div class="card-head"><span class="ic-box p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></span><h3 data-i18n="skills.infra">Yazılım Tasarımı, Alanlar & Araçlar</h3></div>
+          <ul class="chips" id="chips-infra"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJELER ===== -->
+  <section class="section" id="projeler">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="proj.eyebrow">Neler yapıyorum?</p><h2 data-i18n="proj.title">Projeler</h2></div>
+      <div class="projects" id="projects"></div>
+      <div class="more-wrap reveal"><a class="btn btn-line" href="https://github.com/ibrahimaykutt0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg><span data-i18n="proj.github">Tüm projelerim GitHub’da</span></a></div>
+    </div>
+  </section>
+
+  <!-- ===== DENEYİM ===== -->
+  <section class="section" id="deneyim">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="exp.eyebrow">Nerelerde çalıştım?</p><h2 data-i18n="exp.title">Deneyim</h2></div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ===== EĞİTİM ===== -->
+  <section class="section" id="egitim">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="edu.eyebrow">Nereden geldim?</p><h2 data-i18n="edu.title">Eğitim</h2></div>
+      <div class="edu" id="edu"></div>
+    </div>
+  </section>
+
+  <!-- ===== SERTİFİKALAR ===== -->
+  <section class="section" id="sertifikalar">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="cert.eyebrow">Başarılarım</p><h2 data-i18n="cert.title">Sertifikalar</h2></div>
+      <div class="certs" id="certs"></div>
+    </div>
+  </section>
+
+  <!-- ===== İLETİŞİM ===== -->
+  <section class="section" id="iletisim">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow" data-i18n="contact.eyebrow">Konuşalım mı?</p><h2 data-i18n="contact.title">İletişim</h2></div>
+      <div class="contact">
+        <div class="reveal">
+          <p class="contact-intro" data-i18n="contact.intro">Bir staj ya da iş fırsatı, birlikte yapılabilecek bir proje veya sadece bir merhaba. Bana yazın, en kısa sürede dönüş yaparım.</p>
+          <ul class="info">
+            <li><span class="ic-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <div><small data-i18n="contact.mail">E-posta</small><a href="mailto:iaykut148@gmail.com">iaykut148@gmail.com</a></div></li>
+            <li><span class="ic-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><small data-i18n="contact.loc">Konum</small><span data-i18n="contact.locv">Kocaeli, Türkiye</span></div></li>
+            <li><span class="ic-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span>
+              <div><small data-i18n="contact.status">Durum</small><span class="avail" data-i18n="contact.statusv">Çalışmaya açık</span></div></li>
+          </ul>
+          <ul class="socials" data-socials></ul>
+        </div>
+
+        <form class="card reveal" id="form" novalidate>
+          <div class="frow">
+            <div class="field"><label for="f-name" data-i18n="f.name">Ad Soyad</label><input id="f-name" name="name" autocomplete="name" placeholder="Adınız Soyadınız" data-i18n-ph="f.nameph" required><p class="err" id="f-name-err" data-i18n="f.eName">Lütfen adınızı yazın.</p></div>
+            <div class="field"><label for="f-mail" data-i18n="f.mail">E-posta</label><input id="f-mail" name="email" type="email" autocomplete="email" placeholder="ornek@email.com" data-i18n-ph="f.mailph" required><p class="err" id="f-mail-err" data-i18n="f.eMail">Geçerli bir e-posta adresi yazın.</p></div>
+          </div>
+          <div class="field"><label for="f-subj" data-i18n="f.subj">Konu</label><input id="f-subj" name="subject" placeholder="Nasıl yardımcı olabilirim?" data-i18n-ph="f.subjph"></div>
+          <div class="field"><label for="f-msg" data-i18n="f.msg">Mesaj</label><textarea id="f-msg" name="message" placeholder="Mesajınızı buraya yazın..." data-i18n-ph="f.msgph" required></textarea><p class="err" id="f-msg-err" data-i18n="f.eMsg">Mesaj alanı boş bırakılamaz.</p></div>
+          <button class="btn btn-grad" type="submit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.3 10.6 20.6 3c.8-.3 1.6.5 1.3 1.3L14.4 22.7c-.3.8-1.5.8-1.8 0l-2.6-7.4-7.4-2.6c-.8-.3-.8-1.5-.3-2.1z"/></svg>
+            <span data-i18n="f.send">Mesaj Gönder</span></button>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> İbrahim Aykut. <span data-i18n="footer">Tüm hakları saklıdır.</span></span>
+    <ul class="socials" data-socials></ul>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================
+   VERİLER: siteyi güncellemek için yalnızca burayı düzenleyin.
+   "Türkçe|English" biçimindeki metinler dile göre seçilir.
+   ========================================================== */
+// İletişim formu: https://web3forms.com adresinden e-postanızla ücretsiz bir "Access Key" alın ve aşağıya yapıştırın.
+// Anahtar boş kalırsa form, ziyaretçinin e-posta uygulamasını açar (yedek yol).
+const WEB3FORMS_KEY = 'bfe271cb-6935-4617-a66a-052e02a59862';
+
+const SOCIALS = [
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ibrahim-aykut-a2247b255/', icon: 'linkedin' },
+  { name: 'GitHub', url: 'https://github.com/ibrahimaykutt0', icon: 'github' },
+  { name: 'Instagram', url: 'https://www.instagram.com/ibrahimaykut0/', icon: 'instagram' },
+  { name: 'X', url: 'https://x.com/ibrahimaykutt0', icon: 'x' },
+  { name: 'E-posta', url: 'mailto:iaykut148@gmail.com', icon: 'mail' }
+];
+
+// Çubuklardaki yüzdeler tahmini; kendi seviyenize göre değiştirin.
+const BARS = [
+  ['C#', 80], ['HTML / CSS / JavaScript', 85], ['SQL Server', 75], ['Python', 65], ['PHP', 55], ['Flutter', 50]
+];
+const CHIPS = {
+  'chips-tech': ['React Native & Expo', 'TypeScript', 'Django Ninja', 'PostgreSQL', '.NET 8 & WPF', 'Entity Framework Core', 'C# WinForms', 'Node.js', 'Bootstrap', 'Responsive Web', 'Python CustomTkinter', 'Flutter'],
+  'chips-infra': ['Nesne Yönelimli Programlama|Object-Oriented Programming', 'UML', 'Veritabanı Tasarımı (ERD)|Database Design (ERD)', 'MVVM', 'xUnit', 'Mobil Uygulamalar|Mobile Apps', 'Araştırma|Research', 'Bilgisayar Ağları|Computer Networks', 'Teknik Destek|Technical Support', 'Grafik Tasarımı|Graphic Design', 'Visual Studio', 'VS Code', 'Claude Code', 'CSS*']
+};
+const LANGS = [
+  { code: 'TR', name: 'Türkçe|Turkish', note: 'Ana dil|Native', badge: 'Ana dil|Native' },
+  { code: 'GB', name: 'İngilizce|English', note: 'Sınırlı çalışma yetkinliği|Limited working proficiency', badge: 'Temel|Basic' }
+];
+
+const PROJECTS = [
+  { icon: 'phone', box: 'c', status: 'live',
+    title: 'KOSTÜ Mobil · Kampüs Uygulaması|KOSTÜ Mobil · Campus App',
+    meta: 'İME projesi · iOS & Android · 2 kişilik ekip|University project · iOS & Android · team of two',
+    points: [
+      'Kocaeli Sağlık ve Teknoloji Üniversitesi öğrencileri ve akademisyenleri için iOS ve Android kampüs uygulamasını ekip arkadaşımla birlikte geliştiriyorum.|Together with a teammate I’m building the iOS and Android campus app for students and academics of Kocaeli Health and Technology University.',
+      'Ders programı, duyurular, yemek menüsü, akademik takvim, devamsızlık takibi, notlar ve transkript, kulüpler, ulaşım ve bildirim modüllerini içeriyor.|It covers the course schedule, announcements, cafeteria menu, academic calendar, attendance tracking, grades and transcript, clubs, transport and notifications.',
+      'React Native (Expo) istemci ve Django Ninja API ile sözleşme öncelikli mimari: tipler OpenAPI’den üretiliyor, OBS bağlantısı adaptör katmanı üzerinden.|A contract-first setup with a React Native (Expo) client and a Django Ninja API: types are generated from OpenAPI and the OBS connection sits behind an adapter layer.'
+    ],
+    tags: ['React Native', 'Expo', 'TypeScript', 'Django Ninja', 'PostgreSQL', 'OpenAPI', 'Docker'] },
+  { icon: 'shield', box: 'v',
+    title: 'TABYA-1 · Modüler Anti-Dron Savunma Sistemi|TABYA-1 · Modular Counter-Drone Defence System',
+    meta: 'Lider Yardımcısı · 2026|Deputy Team Lead · 2026',
+    points: [
+      'Kamikaze İHA’lara karşı FPV önleyici dron tabanlı, modüler bir savunma sistemi konsepti geliştiren çok kişilik ekipte lider yardımcısıydım.|Deputy lead of a multi-person team developing a modular defence concept built on FPV interceptor drones against kamikaze UAVs.',
+      'Radar ve kamera ile tespit, kilitlenme ve takip senaryosunda uçtan uca ilk başarılı testi gerçekleştirdik.|We ran the first successful end-to-end test of detection, lock-on and tracking with radar and camera.',
+      'TÜBİTAK 1812 BiGG programına başvuru dosyasını hazırladım. Proje, maddi kaynak yetersizliği nedeniyle askıya alındı.|I prepared the application for TÜBİTAK’s 1812 BiGG programme. The project was put on hold for lack of funding.'
+    ],
+    tags: ['Anti-Dron|Counter-Drone', 'FPV Önleyici Dron|FPV Interceptor', 'Radar & Kamera|Radar & Camera', 'TÜBİTAK 1812 BiGG'] },
+  { icon: 'box', box: '',
+    title: 'Stok ve Satış Takip Uygulaması|Stock & Sales Tracking App',
+    meta: 'Masaüstü uygulama · C# / WPF|Desktop app · C# / WPF',
+    desc: 'İşletmelerin stok, satış, teslimat, tahsilat ve taksit takibini tek yerde toplayan masaüstü uygulaması. Her işletmenin ihtiyacına göre uyarlanabiliyor; Excel’e aktarım, sipariş formu ve makbuz yazdırma, otomatik yedekleme içeriyor ve 48 otomatik testle doğrulanıyor.|A desktop app that brings a business’s stock, sales, deliveries, payments and instalments together in one place. It can be adapted to any business; it exports to Excel, prints order forms and receipts, backs itself up automatically and is covered by 48 automated tests.',
+    tags: ['C#', '.NET 8 / WPF', 'MVVM', 'Entity Framework Core', 'SQL Server', 'xUnit'] }
+];
+
+const EXPERIENCE = [
+  { start: [2026, 10], end: null, type: 'intern', title: 'Yazılım Mühendisliği Stajyeri|Software Engineering Intern', org: 'Kocaeli Sağlık ve Teknoloji Üniversitesi (KOSTÜ)',
+    bullets: ['Üniversite için LinkedIn benzeri bir sosyal medya platformu tasarladım.|Designed a LinkedIn-style social platform for the university.', 'Kullanıcı profili, bağlantı ağı ve paylaşım akışı gibi temel modüllerin yapısını planladım.|Planned the core modules: user profiles, connections and the post feed.', 'Üniversitenin iOS ve Android kampüs uygulaması KOSTÜ Mobil’i geliştiriyorum.|Building KOSTÜ Mobil, the university’s iOS and Android campus app.'] },
+  { start: [2026, 6], end: [2026, 7], type: 'lead', title: 'Türkiye Takım Lideri|Türkiye Team Leader', org: 'Erasmus+ Gençlik Değişimi “Cyber Hygiene” · Bansko, Bulgaristan|Erasmus+ Youth Exchange “Cyber Hygiene” · Bansko, Bulgaria',
+    bullets: ['Türkiye ekibinin seyahat planlamasını ve ulaşım lojistiğini koordine ettim.|Coordinated the Turkish team’s travel planning and logistics.', 'Proje bilgi paketini (InfoPack) Türkçeye çevirdim; kültür gecesi için sunum hazırladım.|Translated the project InfoPack into Turkish and prepared the culture-night presentation.'] },
+  { start: [2024, 9], end: [2025, 4], type: 'job', title: 'Destek Personeli|Support Staff', org: 'Türk Kızılay · Kocaeli',
+    bullets: ['İnsani yardım faaliyetlerinde destek personeli olarak tam zamanlı görev aldım.|Worked full-time as support staff in humanitarian aid operations.', 'Ekip çalışması ve iletişim becerilerimi geliştirdim.|Strengthened my teamwork and communication skills.'] },
+  { start: [2023, 9], end: [2024, 9], type: 'vol', title: 'Yazılım Ar-Ge Stajyeri (Gönüllü)|Software R&D Intern (Volunteer)', org: 'Seyir Mobil Sistemler A.Ş. · Derince, Kocaeli',
+    bullets: ['Ar-Ge ekibinde HTML, CSS ve JavaScript ile web tabanlı “Ölü Yaralı” oyun projesini geliştirdim.|Built the web-based “Ölü Yaralı” game with HTML, CSS and JavaScript in the R&D team.', 'HTML, CSS ve JavaScript ile görev yönetimi (To-Do List) uygulaması geliştirdim.|Built a to-do list app with HTML, CSS and JavaScript.', 'PHP ve SQL ile hastane otomasyonu projesinde çalıştım.|Worked on a hospital automation project with PHP and SQL.'] },
+  { start: [2023, 8], end: [2023, 8], type: 'intern', title: 'Stajyer|Intern', org: 'Seyir Mobil Sistemler A.Ş. · Derince, Kocaeli',
+    bullets: ['Web geliştirme stajı.|Web development internship.'] },
+  { start: [2022, 10], end: [2023, 5], type: 'vol', title: 'Web Yazılım ve IT Stajyeri (Gönüllü)|Web Software & IT Intern (Volunteer)', org: 'Medya Baba Reklam Ajansı · Kocaeli',
+    bullets: ['Ar-Ge ekibinde C# ile yazılım geliştirme çalışmalarında yer aldım.|Took part in C# software development in the R&D team.', 'HTML ve CSS ile ajans müşterileri için web tasarım projeleri hazırladım.|Built web design projects for agency clients with HTML and CSS.'] },
+  { when: '1,5 yıl|1.5 years', type: 'vol', title: 'Gönüllü Sekreterya Görevlisi|Volunteer Secretariat Officer', org: 'Türk Kızılay Genel Merkez · Teşkilatlanma Birimi|Turkish Red Crescent HQ · Organisation Unit',
+    bullets: ['Birim içi yazışma, evrak takibi ve toplantı organizasyonu süreçlerinde destek verdim.|Supported internal correspondence, document tracking and meeting organisation.'] }
+];
+
+const EDUCATION = [
+  { degree: 'Yazılım Mühendisliği (Lisans)|Software Engineering (BSc)', school: 'Kocaeli Sağlık ve Teknoloji Üniversitesi · KOSTÜ', year: '2028', yearNote: 'Beklenen mezuniyet|Expected graduation',
+    chips: [['Eyl 2025 – Haz 2028|Sep 2025 – Jun 2028', 'cal'], ['Devam ediyor|In progress', 'live'], ['Mühendislik ve Doğa Bilimleri Fakültesi|Faculty of Engineering & Natural Sciences']] },
+  { degree: 'Bilgisayar Programcılığı (Ön Lisans)|Computer Programming (Associate)', school: 'Kocaeli Üniversitesi · Meslek Yüksekokulu', year: '2024', yearNote: 'Mezuniyet|Graduated', kind: 'second',
+    chips: [['GNO 3.02 / 4.00|GPA 3.02 / 4.00', 'ok'], ['Eyl 2022 – Haz 2024|Sep 2022 – Jun 2024', 'cal']] },
+  { degree: 'Lise|High School', school: 'Bahçeşehir Koleji Anadolu Lisesi · Erzurum', year: '2021', yearNote: 'Mezuniyet|Graduated', kind: 'third',
+    chips: [['Not ortalaması 89 / 100|Average 89 / 100', 'ok'], ['2017 – 2021', 'cal']] }
+];
+
+const CERTS = [
+  { who: 'AFAD', title: 'Liderlik Eğitimi|Leadership Training', year: '2024', icon: 'award' },
+  { who: 'AFAD', title: 'Arama Kurtarma Eğitimi|Search & Rescue Training', year: '2024', icon: 'award' },
+  { who: 'AFAD', title: 'Kişisel Stres Yönetimi|Personal Stress Management', year: '2024', icon: 'award' },
+  { who: 'LinkedIn', title: 'Yetenek Değerlendirmesi: CSS|Skill Assessment: CSS', badge: 'Başarıyla geçti|Passed', icon: 'check' }
+];
+
+const EN = {
+  'skip': 'Skip to content', 'cv': 'Download CV',
+  'nav.about': 'About', 'nav.skills': 'Skills', 'nav.projects': 'Projects', 'nav.exp': 'Experience', 'nav.edu': 'Education', 'nav.certs': 'Certificates', 'nav.contact': 'Contact',
+  'hero.hello': 'Hi, I’m', 'hero.role1': 'Software Engineering Student', 'hero.role2': 'Web & Backend Developer',
+  'hero.tagline': 'I build web, desktop and mobile apps with HTML, CSS, JavaScript, C#, Python and SQL Server.',
+  'hero.facts': 'Kocaeli · KOSTÜ Software Engineering · class of 2028', 'hero.cta1': 'See My Projects', 'hero.cta2': 'Get in Touch',
+  'hero.f1': 'Software Engineering', 'hero.f2': 'Open to work', 'hero.f2s': 'Kocaeli · Hybrid · Remote',
+  'about.eyebrow': 'Who am I?', 'about.title': 'About Me',
+  'about.p1': 'I study <strong>Software Engineering</strong> at Kocaeli Health and Technology University (KOSTÜ) and graduated in <strong>Computer Programming</strong> from Kocaeli University.',
+  'about.p2': 'I did web and software development internships in the R&D teams of <strong>Seyir Mobil</strong> and <strong>Medya Baba</strong>. I’ve built full-stack web and desktop apps with HTML, CSS, JavaScript, C#, Python, Node.js and SQL Server, including a stock and sales tracking app for businesses, end to end.',
+  'about.p3': 'I was deputy lead on the counter-drone project <strong>TABYA-1</strong> and Türkiye team leader in an Erasmus+ project. Right now I’m building <strong>KOSTÜ Mobil</strong>, the university’s campus app. I’m drawn to defence technology and want to join a team that creates real value in software and the web.',
+  'stat.orgs': 'Organizations', 'stat.roles': 'Projects', 'stat.skills': 'Certificates', 'stat.grad': 'Expected Graduation',
+  'skills.eyebrow': 'What do I do?', 'skills.title': 'Skills', 'skills.dev': 'Software Development', 'skills.focus': 'Technologies', 'skills.web': 'Languages', 'skills.infra': 'Software Design, Fields & Tools',
+  'proj.eyebrow': 'What am I building?', 'proj.title': 'Projects', 'proj.github': 'All my projects on GitHub',
+  'exp.eyebrow': 'Where have I worked?', 'exp.title': 'Experience',
+  'edu.eyebrow': 'Where do I come from?', 'edu.title': 'Education',
+  'cert.eyebrow': 'Achievements', 'cert.title': 'Certificates',
+  'contact.eyebrow': 'Shall we talk?', 'contact.title': 'Contact',
+  'contact.intro': 'An internship or job opportunity, a project we could build together, or just a hello. Write to me and I’ll get back to you as soon as I can.',
+  'contact.mail': 'Email', 'contact.loc': 'Location', 'contact.locv': 'Kocaeli, Türkiye', 'contact.status': 'Status', 'contact.statusv': 'Open to work',
+  'f.name': 'Full name', 'f.mail': 'Email', 'f.subj': 'Subject', 'f.msg': 'Message',
+  'f.nameph': 'Your full name', 'f.mailph': 'name@email.com', 'f.subjph': 'How can I help?', 'f.msgph': 'Write your message here...',
+  'f.eName': 'Please enter your name.', 'f.eMail': 'Please enter a valid email address.', 'f.eMsg': 'The message can’t be empty.',
+  'f.send': 'Send Message',
+  'footer': 'All rights reserved.'
+};
+const TX = {
+  months: [['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'], ['January','February','March','April','May','June','July','August','September','October','November','December']],
+  now: ['Günümüz', 'Present'], y: ['yıl', 'yr'], ys: ['yıl', 'yrs'], m: ['ay', 'mo'], ms: ['ay', 'mos'],
+  type: { intern: ['Staj', 'Internship'], job: ['İş Deneyimi', 'Work'], vol: ['Gönüllülük', 'Volunteer'], lead: ['Liderlik', 'Leadership'] },
+  cert: ['Sertifika', 'Certificate'], video: ['Tanıtım videosu', 'Demo video'],
+  status: { live: ['Devam ediyor', 'In progress'], done: ['Yayında', 'Live'] },
+  title: ['İbrahim Aykut · Yazılım Mühendisliği Öğrencisi', 'İbrahim Aykut · Software Engineering Student'],
+  subject: ['Web sitenden mesaj', 'Message from your website'],
+  sending: ['Gönderiliyor…', 'Sending…'],
+  sent: ['Teşekkürler, mesajınız bana ulaştı. En kısa sürede dönüş yapacağım.', 'Thanks, your message reached me. I’ll get back to you soon.'],
+  failed: ['Mesaj gönderilemedi. Lütfen tekrar deneyin ya da iaykut148@gmail.com adresine yazın.', 'The message could not be sent. Please try again or write to iaykut148@gmail.com.'],
+  skillsWord: ['yetenek', 'skills']
+};
+
+/* ================= Yardımcılar ================= */
+let lang = document.documentElement.lang === 'en' ? 'en' : 'tr';
+const L = () => (lang === 'en' ? 1 : 0);
+const t = (s) => (s.includes('|') ? s.split('|')[L()] : s);
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const today = new Date();
+const NOW = [today.getFullYear(), today.getMonth() + 1];
+const span = (a, b) => (b[0] - a[0]) * 12 + (b[1] - a[1]) + 1;
+const fmt = ([y, m]) => TX.months[L()][m - 1] + ' ' + y;
+const dur = (n) => {
+  const y = Math.floor(n / 12), m = n % 12, o = [];
+  if (y) o.push(`${y} ${y > 1 ? TX.ys[L()] : TX.y[L()]}`);
+  if (m) o.push(`${m} ${m > 1 ? TX.ms[L()] : TX.m[L()]}`);
+  return o.join(' ');
+};
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ICON = {
+  linkedin: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>',
+  github: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>',
+  x: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>',
+  db: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>',
+  web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>',
+  cap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>',
+  school: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>',
+  cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>',
+  live: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>',
+  grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>',
+  box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>',
+  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+  shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3z"/><circle cx="12" cy="11" r="3"/><path d="M12 5v3M12 14v3M7 11h2M15 11h2"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.4 3.3-5.5 6.5-5.5s5.9 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.6c2.8-.3 5 1.4 5.5 4.4"/></svg>',
+  film: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4M3 12h18"/></svg>',
+  award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  ok: '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>'
+};
+
+/* ================= Çizim ================= */
+function render() {
+  document.querySelectorAll('[data-socials]').forEach((ul) => {
+    ul.innerHTML = SOCIALS.map((s) => `<li><a class="social" href="${s.url}" ${s.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''} aria-label="${s.name}">${ICON[s.icon]}</a></li>`).join('');
+  });
+
+  document.getElementById('bars').innerHTML = BARS.map(([n, v]) =>
+    `<div class="bar"><div class="bar-top"><span>${esc(n)}</span><span>%${v}</span></div><div class="track"><i style="width:${v}%"></i></div></div>`).join('');
+
+  document.getElementById('langs').innerHTML = LANGS.map((l) => `<li><span class="code">${l.code}</span><div><b>${esc(t(l.name))}</b><small>${esc(t(l.note))}</small></div><span class="badge job">${esc(t(l.badge))}</span></li>`).join('');
+
+  Object.entries(CHIPS).forEach(([id, list]) => {
+    document.getElementById(id).innerHTML = list.map((raw) => {
+      const assessed = raw.endsWith('*'), s = assessed ? raw.slice(0, -1) : raw;
+      return `<li class="chip">${esc(t(s))}${assessed ? ICON.ok : ''}</li>`;
+    }).join('');
+  });
+
+  document.getElementById('projects').innerHTML = PROJECTS.map((p) => `
+    <article class="card project reveal">
+      ${p.video ? `<div class="media"><video src="${p.video}" poster="${p.poster}" controls preload="none" playsinline aria-label="${esc(t(p.title))}: ${TX.video[L()]}"></video></div>` : ''}
+      <div class="top"><span class="ic-box ${p.box}">${ICON[p.icon]}</span>${p.url ? `<a class="social" href="${p.url}" target="_blank" rel="noopener" aria-label="${esc(t(p.title))}">${ICON.ext}</a>` : ''}</div>
+      ${p.meta ? `<p class="meta">${esc(t(p.meta))}</p>` : ''}
+      <h3>${esc(t(p.title))}</h3>
+      ${p.desc ? `<p>${esc(t(p.desc))}</p>` : ''}
+      ${p.points ? `<ul class="points">${p.points.map((x) => `<li>${esc(t(x))}</li>`).join('')}</ul>` : ''}
+      ${p.tags && p.tags.length ? `<ul class="chips">${p.tags.map((g) => `<li class="chip cy">${esc(t(g))}</li>`).join('')}</ul>` : ''}
+    </article>`).join('');
+
+  document.getElementById('timeline').innerHTML = EXPERIENCE.map((e) => {
+    let range, len = '';
+    if (e.when) range = t(e.when);
+    else {
+      const end = e.end || NOW, same = e.end && e.start[0] === e.end[0] && e.start[1] === e.end[1];
+      range = same ? fmt(e.start) : `${fmt(e.start)} — ${e.end ? fmt(e.end) : TX.now[L()]}`;
+      len = dur(span(e.start, end));
+    }
+    return `<li class="tl reveal${e.start && !e.end ? ' now' : ''}"><div class="card">
+      <div class="tl-meta"><span>${range}</span><span class="badge ${e.type}">${TX.type[e.type][L()]}</span>${len ? `<span class="len">${len}</span>` : ''}</div>
+      <h3>${esc(t(e.title))}</h3>
+      <p class="org">${esc(t(e.org))}</p>
+      <ul>${e.bullets.map((b) => `<li>${esc(t(b))}</li>`).join('')}</ul>
+    </div></li>`;
+  }).join('');
+
+  document.getElementById('edu').innerHTML = EDUCATION.map((e) => `
+    <article class="card reveal${e.kind ? ' ' + e.kind : ''}">
+      <div class="row">
+        <span class="ic-box ${e.kind === 'second' ? 'p' : e.kind === 'third' ? 'c' : ''}">${e.kind ? ICON.school : ICON.cap}</span>
+        <div><h3>${esc(t(e.degree))}</h3><p class="school">${esc(e.school)}</p></div>
+        <div class="year"><b>${e.year}</b><small>${esc(t(e.yearNote))}</small></div>
+      </div>
+      <ul class="chips">${e.chips.map(([c, ic]) => `<li class="chip${ic === 'live' ? ' gr' : ''}">${ic ? ICON[ic] : ''}${esc(t(c))}</li>`).join('')}</ul>
+    </article>`).join('');
+
+  document.getElementById('certs').innerHTML = CERTS.map((c) => `
+    <article class="card cert reveal">
+      <span class="ic-box ${c.who === 'AFAD' ? '' : 'g'}">${ICON[c.icon]}</span>
+      <div><p class="who">${esc(c.who)}${c.year ? ' · ' + c.year : ''}</p><h3>${esc(t(c.title))}</h3>
+      <span class="badge ${c.badge ? 'live' : 'job'}">${esc(c.badge ? t(c.badge) : TX.cert[L()])}</span></div>
+    </article>`).join('');
+
+  observeReveals();
+}
+
+/* ================= Dil ================= */
+const TR = {}, TR_PH = {};
+document.querySelectorAll('[data-i18n]').forEach((el) => { const k = el.dataset.i18n; if (!(k in TR)) TR[k] = el.hasAttribute('data-html') ? el.innerHTML : el.textContent; });
+document.querySelectorAll('[data-i18n-ph]').forEach((el) => { TR_PH[el.dataset.i18nPh] = el.placeholder; });
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.title = TX.title[L()];
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const k = el.dataset.i18n, v = lang === 'en' ? EN[k] : TR[k];
+    if (v == null) return;
+    if (el.hasAttribute('data-html')) el.innerHTML = v; else el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach((el) => { const k = el.dataset.i18nPh; el.placeholder = lang === 'en' ? EN[k] : TR_PH[k]; });
+  document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+  render();
+}
+document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => {
+  if (b.dataset.lang === lang) return;
+  lang = b.dataset.lang;
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  applyLang();
+}));
+
+/* ================= Görünürken beliren öğeler, çubuklar, sayaçlar ================= */
+const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+  if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+}), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+function observeReveals() {
+  document.querySelectorAll('.reveal:not(.in)').forEach((el) => (reduce ? el.classList.add('in') : io.observe(el)));
+  sweep();
+}
+// Yedek: görünür alana girmiş ya da geçilmiş her öğeyi göster (gözlemci kaçırırsa)
+function sweep() {
+  const h = innerHeight;
+  document.querySelectorAll('.reveal:not(.in)').forEach((el) => { if (el.getBoundingClientRect().top < h - 40) { el.classList.add('in'); io.unobserve(el); } });
+}
+let sweepQueued = false;
+addEventListener('scroll', () => { if (!sweepQueued) { sweepQueued = true; requestAnimationFrame(() => { sweepQueued = false; sweep(); }); } }, { passive: true });
+addEventListener('load', sweep);
+
+const countIO = new IntersectionObserver((entries) => entries.forEach((en) => {
+  if (!en.isIntersecting) return;
+  const el = en.target, to = +el.dataset.count; countIO.unobserve(el);
+  if (reduce) { el.textContent = to; return; }
+  const from = to > 1000 ? to - 40 : 0, t0 = performance.now(), d = 1600;
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / d), e = 1 - Math.pow(1 - p, 4);
+    el.textContent = Math.round(from + (to - from) * e) + (to < 1000 && p === 1 && to >= 4 && el.dataset.plus ? '+' : '');
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}), { threshold: .6 });
+document.querySelectorAll('[data-count]').forEach((el) => countIO.observe(el));
+
+/* ================= Menü ================= */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', scrollY > 20);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const links = [...document.querySelectorAll('.links a')];
+const spy = new IntersectionObserver((entries) => entries.forEach((en) => {
+  if (en.isIntersecting) links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+}), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach((s) => spy.observe(s));
+
+const mmenu = document.getElementById('mmenu'), menuBtn = document.querySelector('.tools .menu-btn');
+function setMenu(open) {
+  mmenu.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+menuBtn.addEventListener('click', () => setMenu(true));
+mmenu.querySelector('.close').addEventListener('click', () => setMenu(false));
+mmenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+/* ================= Form (Web3Forms; anahtar yoksa e-posta uygulaması) ================= */
+document.getElementById('form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const f = e.target;
+  const checks = [[f.name, f.name.value.trim() !== ''], [f.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())], [f.message, f.message.value.trim() !== '']];
+  let first = null;
+  checks.forEach(([input, ok]) => {
+    input.closest('.field').classList.toggle('invalid', !ok);
+    input.setAttribute('aria-invalid', String(!ok));
+    if (!ok) input.setAttribute('aria-describedby', input.id + '-err'); else input.removeAttribute('aria-describedby');
+    if (!ok && !first) first = input;
+  });
+  if (first) { first.focus(); return; }
+  const subject = f.subject.value.trim() || TX.subject[L()];
+  if (!WEB3FORMS_KEY) {
+    const body = `${f.message.value.trim()}\n\n${f.name.value.trim()} · ${f.email.value.trim()}`;
+    location.href = `mailto:iaykut148@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return;
+  }
+  if (f.botcheck.checked) return;
+  const status = document.getElementById('form-status'), btn = f.querySelector('button[type="submit"]');
+  status.className = 'form-status'; status.textContent = TX.sending[L()]; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: WEB3FORMS_KEY, from_name: 'ibrahimaykut web sitesi', subject, name: f.name.value.trim(), email: f.email.value.trim(), message: f.message.value.trim() })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) throw new Error(data.message || res.status);
+    status.className = 'form-status ok'; status.textContent = TX.sent[L()]; f.reset();
+  } catch (err) {
+    status.className = 'form-status bad'; status.textContent = TX.failed[L()];
+  } finally { btn.disabled = false; }
+});
+
+document.getElementById('year').textContent = today.getFullYear();
+applyLang();
+</script>
+</body>
+</html>
